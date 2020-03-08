@@ -1,0 +1,27 @@
+#remoto {
+    border-radius: 7px;
+    border: 2px solid #666;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    width: 100%;
+    right: 0;
+    left: 0;
+    top: 0;
+    background: #fff;
+}
+
+#local {
+    border-radius: 7px;
+    border: 2px solid #666;
+    width: 240px;
+    height: 180px;
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background: #fff;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+}

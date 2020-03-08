@@ -1,0 +1,15 @@
+*.pyc
+*.pem
+*.pub
+*.tar.gz
+*.zip
+*.sql
+*.db
+secrets.txt
+./tmp
+./build/*
+env
+venv
+migrations
+__pycache__
+.vscode
