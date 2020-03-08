@@ -1,5 +1,4 @@
 var ws = new WebSocket(location.href.replace('http', 'ws').replace('sala', 'ws'));
-
 var initiator;
 var pc;
 

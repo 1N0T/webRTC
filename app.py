@@ -4,6 +4,7 @@
 import logging
 import os
 import uuid
+import ssl
 
 from tornado.ioloop import IOLoop
 from tornado.web import Application, RequestHandler
@@ -69,13 +70,18 @@ def main():
         debug=True
     )
 
+    context = ssl.SSLContext(ssl.PROTOCOL_TLSv1_2)
+    certificate_path = rel('certificates')
+    context.load_cert_chain(f"{certificate_path}/certificate.pem",
+                            f"{certificate_path}/key.pem")
+
     application = Application([
         (r'/', MainHandler),
         (r"/sala/([^/]*)", RoomHandler),
         (r'/ws/([^/]*)', EchoWebSocket),
     ], **settings)
 
-    application.listen(address='127.0.0.1', port=8080)
+    application.listen(address='0.0.0.0', ssl_options=context, port=8080)
     logging.info("Started listening at 127.0.0.1:8080.")
     IOLoop.instance().start()
 
